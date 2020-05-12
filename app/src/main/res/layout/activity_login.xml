@@ -5,10 +5,23 @@
     android:layout_width="match_parent"
     android:background="#ff5440"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:text="Student Management System"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/circleImageView2" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/circleImageView"
+        android:id="@+id/circleImageView2"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:src="@drawable/sms"
@@ -16,19 +29,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Student Management System"
-        android:textColor="@color/colorPrimaryDark"
-        android:fontFamily="cursive"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -41,17 +41,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        <EditText
-            android:id="@+id/inputName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="13dp"
-            android:background="@drawable/txt_bg"
-            android:layout_marginTop="16dp"
-            android:ems="10"
-            android:hint="Name"
-            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/inputEmail"
@@ -75,16 +64,6 @@
             android:hint="Password"
             android:inputType="textPassword" />
 
-        <EditText
-            android:id="@+id/inputConfirmPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:padding="13dp"
-            android:background="@drawable/txt_bg"
-            android:ems="10"
-            android:hint="Confirm Password"
-            android:inputType="textPassword" />
 
         <Button
             android:id="@+id/btnRegister"
@@ -92,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@drawable/btn_corner"
-            android:text="Register"
+            android:text="Login"
             android:textColor="#ffffff"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -105,7 +84,7 @@
         android:textStyle="bold"
         android:textSize="15sp"
         android:textColor="#ffffff"
-        android:text="Already have an account? Login"
+        android:text="Don't have an account? Register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
