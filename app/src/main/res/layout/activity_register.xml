@@ -50,6 +50,7 @@
             android:background="@drawable/txt_bg"
             android:layout_marginTop="16dp"
             android:ems="10"
+            android:text="Social Codia"
             android:hint="Name"
             android:inputType="textPersonName" />
 
@@ -58,6 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="13dp"
+            android:text="socialcodia@gmail.com"
             android:background="@drawable/txt_bg"
             android:layout_marginTop="16dp"
             android:ems="10"
@@ -70,6 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:padding="13dp"
+            android:text="farooqui"
             android:background="@drawable/txt_bg"
             android:ems="10"
             android:hint="Password"
@@ -81,6 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:padding="13dp"
+            android:text="farooqui"
             android:background="@drawable/txt_bg"
             android:ems="10"
             android:hint="Confirm Password"

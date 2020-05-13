@@ -66,7 +66,7 @@
 
 
         <Button
-            android:id="@+id/btnRegister"
+            android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -78,7 +78,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tvLogin"
+        android:id="@+id/tvRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"

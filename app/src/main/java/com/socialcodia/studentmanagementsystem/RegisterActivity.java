@@ -2,12 +2,20 @@ package com.socialcodia.studentmanagementsystem;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -32,6 +40,13 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 validateData();
+            }
+        });
+
+        tvLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendToLogin();
             }
         });
 
@@ -96,11 +111,43 @@ public class RegisterActivity extends AppCompatActivity {
         }
         else
         {
-            doRegister();
+            doRegister(name,email,password);
         }
     }
 
-    private void doRegister() {
+    private void doRegister(String name, String email, String password)
+    {
+        btnRegister.setEnabled(false);
+        Call<ResponseBody> call = RetrofitClient.getInstance().getApi().register(name,email,password);
+
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                try {
+                    String message = response.toString();
+                    Toast.makeText(RegisterActivity.this, message, Toast.LENGTH_LONG).show();
+                }
+                catch (Exception e)
+                {
+                    Toast.makeText(RegisterActivity.this, "Excep e" +e, Toast.LENGTH_SHORT).show();
+                }
+                btnRegister.setEnabled(true);
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                btnRegister.setEnabled(true);
+                Toast.makeText(RegisterActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+    private void sendToLogin()
+    {
+        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 }
